@@ -13,7 +13,7 @@ public class salto : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if (Input.GetKeyDown (KeyCode.UpArrow)) {
+		if (Input.GetKeyDown (KeyCode.UpArrow) && tocando_suelo) {
 			Debug.Log ("Arriba Pulsado");
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.up*fuerza);
 			animator.SetBool ("Salto", true);
@@ -24,6 +24,12 @@ public class salto : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D objeto){
 		if (objeto.tag == "Suelo") {
 			animator.SetBool ("Salto", false);
+			tocando_suelo = true;
+		}
+	}
+	void OnTriggerExit2D(Collider2D objeto){
+		if (objeto.tag == "Suelo") {
+			tocando_suelo = false;
 		}
 	}
 }
