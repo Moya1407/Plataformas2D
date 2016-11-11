@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Moneda : MonoBehaviour {
+public class DiamanteV : MonoBehaviour {
 	private Rigidbody2D rb;
 	GameObject txt_moneda;
 	Contador ctrl_moneda;
@@ -14,15 +14,15 @@ public class Moneda : MonoBehaviour {
 		txt_moneda = GameObject.Find ("TextoMoneda");
 		ctrl_moneda = txt_moneda.GetComponent<Contador> ();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "Player") {
-			ctrl_moneda.suma_monedas (5);
+			ctrl_moneda.suma_monedas (50);
 			Destroy (gameObject);
 		}
 	}
