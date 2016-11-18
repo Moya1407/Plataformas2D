@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Contador : MonoBehaviour {
 
-	private int monedas = 0;
+	public int monedas = 0;
 	Text texto;
 
 	void Start(){
@@ -21,7 +21,7 @@ public class Contador : MonoBehaviour {
 	}
 
 	public void resetear (){
-		monedas =0;
+		monedas = 0;
 		texto.text = monedas.ToString ();
 	}
 }

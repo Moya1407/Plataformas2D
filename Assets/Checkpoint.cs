@@ -18,5 +18,6 @@ public class Checkpoint : MonoBehaviour {
 			gcs.checkpoint (transform.position);
 			activada = true;
 		}
+
 	}
 }

@@ -4,11 +4,13 @@ using System.Collections;
 public class GameControlScript : MonoBehaviour {
 
 	private Vector3 punto_inicio;
+	private Vector3 punto_inicio2;
 	public GameObject player;
 	public bool vivo = true;
 
 	void Start(){
 		punto_inicio = player.transform.position;
+		punto_inicio2 = player.transform.position;
 	}
 
 	public void respawn(){
@@ -18,6 +20,6 @@ public class GameControlScript : MonoBehaviour {
 
 	public void checkpoint(Vector3 nuevo_punto){
 		punto_inicio = nuevo_punto;
-	}
-		
+		}
 }
+
